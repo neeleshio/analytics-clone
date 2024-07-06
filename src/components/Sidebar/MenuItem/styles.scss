@@ -1,0 +1,18 @@
+.menuitem-container {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    .menuitem-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 2rem;
+        border-radius: 0 50px 50px 0;
+
+        &:hover {
+            background-color: #f2f3f4;
+            transition: all 0.3s ease;
+        }
+    }
+}

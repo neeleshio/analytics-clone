@@ -1,0 +1,12 @@
+.sidebar-and-overview {
+    position: absolute;
+    top: 6.4rem;
+    display: flex;
+    width: 100%;
+    height: calc(100% - 6.4rem);
+}
+
+main {
+    width: 100%;
+    background-color: #ffffff;
+}

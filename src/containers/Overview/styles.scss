@@ -1,0 +1,74 @@
+.overview-wrapper {
+    padding: 1rem 3rem;
+}
+
+.charts-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .pie-chart {
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.line-chart-container {
+    border: 1px solid #d9dce0;
+    border-radius: 5px;
+    width: 706px;
+}
+
+.stats-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats-container {
+    padding: 1rem 2rem;
+    border: 1px solid #d9dce0;
+    display: flex;
+    // width: 30rem;
+    border-radius: 6px;
+    align-items: center;
+
+    .circle {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50px;
+        border: 5px solid #5db3d9;
+    }
+
+    .stats {
+        color: #000000;
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+
+        .name {
+            font-weight: 500;
+        }
+
+        .value {
+            color: #545353;
+            font-size: 1.3rem;
+            padding-left: 0.3rem;
+        }
+    }
+}
+
+.dropdown-container {
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 2rem;
+    margin-top: 4rem;
+
+    select {
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 5px;
+        // padding: 0.5rem 1rem;
+    }
+}

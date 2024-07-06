@@ -1,0 +1,50 @@
+.header-container {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d9dce0;
+    background-color: #ffffff;
+
+    padding: 0.5rem 2rem;
+    font-size: 2rem;
+    position: fixed;
+    width: 100%;
+    height: 64px;
+    align-items: center;
+
+    .hamburger-menu {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+        cursor: pointer;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.profile-icon-container {
+    border-radius: 50px;
+    background-color: #d9dce0;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #a5a5a5;
+}
+
+.header-search {
+    input {
+        background-color: #d9dce0;
+        border: none;
+        width: 40rem;
+        height: 3rem;
+        padding: 2rem;
+        border-radius: 6px;
+        font-size: 1.6rem;
+        color: #000000;
+    }
+}

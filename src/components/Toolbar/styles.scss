@@ -1,0 +1,32 @@
+.toolbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #d9dce0;
+    padding: 1.5rem 2rem;
+    align-items: center;
+
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .utility-btns-container {
+        .btn-container {
+            display: flex;
+            gap: 4rem;
+
+            button {
+                color: #000000;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                font-size: 1.6rem;
+                border: none;
+                gap: 0.5rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

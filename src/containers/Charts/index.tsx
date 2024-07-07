@@ -25,6 +25,7 @@ function ChartsContainer({}) {
         setData([...randomData]);
     }, []);
 
+    // filtering data by year
     const handleFilterByDate = (year: string) => {
         setActiveFilter(year);
     };

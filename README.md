@@ -8,7 +8,7 @@ This project is a simple google analytics clone webapp with 1 screens.
 -   used css preprocessor sass for styling purpose.
 -   redux-toolkit for handling global states.
 -   used [google charting library](https://www.react-google-charts.com/) to draw required charts.
--   a dockerfile and docker-compose.yml has been provided to up and run.
+-   a dockerfile and docker-compose.yml has been provided to up and run the app in container.
 -   use of react-icon package for icons.
 -   use of typscript for type safety.
 
@@ -50,3 +50,35 @@ VSCode is highly preferred. Please ensure you have installed these extensions:
 
 -   Prettier
 -   eslint
+
+## Design Philosophy
+
+#### src/components
+
+This folder includes stateless components meaning no state has been handled inside the components.
+
+Main components:
+
+- Header
+- Sidebar
+- Toolbar
+- Filter By Date
+- Charts
+
+#### src/containers
+
+- This foldre is actually where we are importing and using our components as required.
+- In these containers, we are handling all the states and side effects.
+
+#### src/data
+
+Inludes 2 files: chartData and sidebarData.
+
+- chartData file has an exported custom function called generateRandomChartData() which is responsible for generating fake static data for our charts.
+
+## Charts used
+
+- Line Chart
+- Bar Chart
+- Pie Chart
+

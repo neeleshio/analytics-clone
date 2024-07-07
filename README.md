@@ -1,8 +1,20 @@
+<div align="center">
+  
 # Nextjs G-Analytics
 
-This project is a simple google analytics clone webapp with 1 screens.
+This project is a simple analytics dashboard webapp with 1 screen.
+</div>
 
-## Highlights
+<br/>
+<br/>
+
+<img width="1436" alt="image" src="https://github.com/neeleshio/analytics-clone/assets/56342160/4703e9f5-f517-4475-b794-1d44d422e112">
+
+Live at https://analytics-clone.vercel.app/
+
+<br/>
+
+## Technolgies highlights
 
 -   project has been built using nextjs (reactjs framework).
 -   used css preprocessor sass for styling purpose.

@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import './styles.scss';
 import { RxAvatar } from 'react-icons/rx';
-import { GiHamburgerMenu } from 'react-icons/gi';
+import hambugerIcon from '../../assests/hamburger.svg';
+import Hamburger from '@/assests/Hamburger';
 
 type HeaderProps = {
     dispatch: FC;
@@ -13,7 +14,7 @@ function Header({ dispatch, toggleSidbar }: HeaderProps) {
         <header className="header-container">
             <div className="logo-container">
                 <div className="hamburger-menu" onClick={() => dispatch(toggleSidbar())}>
-                    <GiHamburgerMenu />
+                    <Hamburger />
                 </div>
                 <span>Analytics Dashboard</span>
             </div>

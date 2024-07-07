@@ -5,6 +5,7 @@ import LineChartContainer from './LineChart';
 import LineChartIndivisual from './LineChartIndivisual';
 import BarChartContainer from './BarChart';
 import PieChartContainer from './PieChart';
+import './styles.scss';
 
 type randomDataTypes = {
     createdMonth: string;
@@ -29,13 +30,13 @@ function ChartsContainer({}) {
     };
 
     return (
-        <div className="charts-wrapper">
+        <div className="charts-container">
             <div className="line-chart-container">
                 <div className="title">Overall Insights</div>
                 <LineChartContainer data={data} />
             </div>
 
-            <div className="header">
+            <div className="filter-btns-container">
                 <span className="title">Insights</span>
                 <div className="filter-btns">
                     {years.map((year) => (

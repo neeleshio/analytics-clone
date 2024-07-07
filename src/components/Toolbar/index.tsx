@@ -3,7 +3,7 @@ import './styles.scss';
 
 function Toolbar({ title }: { title: string }) {
     return (
-        <div className="toolbar-container">
+        <div className="toolbar">
             <h1>{title}</h1>
         </div>
     );

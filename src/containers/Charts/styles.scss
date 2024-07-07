@@ -1,0 +1,43 @@
+.line-chart-container {
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+
+    .title {
+        font-size: 1.8rem;
+        display: flex;
+        justify-content: center;
+        text-decoration: underline;
+        margin: 2rem 0;
+    }
+}
+
+.line-chart-indivisual-container {
+    border-radius: 15px;
+    margin: 2rem 0 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+
+    .wrapper {
+        border: 1px solid #d7d6d6;
+    }
+
+    @media screen and (max-width: 678px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.filter-btns-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+        font-size: 1.8rem;
+        align-self: end;
+    }
+
+    .filter-btns {
+        display: flex;
+        justify-content: end;
+    }
+}

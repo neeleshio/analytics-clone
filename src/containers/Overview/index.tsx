@@ -52,8 +52,8 @@ function OverviewContainer() {
     return (
         <>
             {!loading ? (
-                <div className="overview-wrapper">
-                    <div className="stats-wrapper">
+                <div className="overview-container">
+                    <div className="stats-cards-container">
                         {statsData.map((el) => (
                             <StatsCard {...el} key={el.name} />
                         ))}

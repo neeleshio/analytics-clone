@@ -3,8 +3,8 @@ import './styles.scss';
 
 function StatsCard({ name, value }: { name: string; value: string }) {
     return (
-        <div className="stats-container">
-            <div className="stats">
+        <div className="stats-card">
+            <div className="wrapper">
                 <span className="name">{name}</span>
                 <span className="value">{value}</span>
             </div>

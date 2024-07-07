@@ -7,14 +7,6 @@
     overflow: scroll;
     border-right: 1px solid #d9dce0;
 
-    .submenu-conatiner {
-        display: none;
-
-        &.expand {
-            display: block;
-        }
-    }
-
     &.hide {
         display: none;
     }
@@ -27,5 +19,13 @@
         position: absolute;
         left: 0;
         z-index: 100;
+    }
+
+    .submenu-conatiner {
+        display: none;
+
+        &.expand {
+            display: block;
+        }
     }
 }

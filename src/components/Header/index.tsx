@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import './styles.scss';
 import { RxAvatar } from 'react-icons/rx';
-import hambugerIcon from '../../assests/hamburger.svg';
 import Hamburger from '@/assests/Hamburger';
 
 type HeaderProps = {

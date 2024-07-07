@@ -15,7 +15,7 @@ export const months = [
 
 export const years = ['2024', '2023', '2022'];
 
-export const generate = () => {
+export const generateRandomChartData = () => {
     const data = [];
 
     for (let year in years) {
@@ -25,7 +25,7 @@ export const generate = () => {
                 createdYear: years[year],
                 users: Math.floor(Math.random() * 100),
                 pageViews: Math.floor(Math.random() * 200),
-                bounceRate: Math.floor(Math.random() * 50),
+                bounceRate: Math.floor(Math.random() * 10),
                 sessions: Math.floor(Math.random() * 150)
             });
         }
@@ -67,25 +67,38 @@ export const dataTypes = [
 export const stats = [
     {
         id: 'users',
-        name: 'Total Users',
+        name: 'Users',
         value: '0'
     },
     {
         id: 'sessions',
-
-        name: 'Total Sessions',
+        name: 'Sessions',
         value: '0'
     },
     {
         id: 'pageVisits',
-
-        name: 'Total Page Visits',
+        name: 'Page Visits',
         value: '0'
     },
     {
         id: 'users',
-
         name: 'Bounce Rate',
         value: '0'
     }
 ];
+
+export const barChartOptions = {
+    chart: {
+        title: 'Comparision of data points over the years',
+        subtitle: 'Based on the last 3 years of collected data'
+    },
+    bars: 'horizontal'
+};
+
+export const lineChartOptions = {
+    curveType: 'function',
+    legend: { position: 'top' },
+    is3D: true
+};
+
+export const chartColors = ['blue', 'red', 'green', 'orange', 'green'];

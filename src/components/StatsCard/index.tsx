@@ -1,9 +1,9 @@
 import React from 'react';
+import './styles.scss';
 
-function Stats({ name, value }) {
+function StatsCard({ name, value }: { name: string; value: string }) {
     return (
         <div className="stats-container">
-            <div className="circle"></div>
             <div className="stats">
                 <span className="name">{name}</span>
                 <span className="value">{value}</span>
@@ -12,4 +12,4 @@ function Stats({ name, value }) {
     );
 }
 
-export default Stats;
+export default StatsCard;

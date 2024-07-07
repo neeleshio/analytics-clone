@@ -1,4 +1,15 @@
-export const sidebarData: any = [
+export type SidebarDataTypes = {
+    id: string;
+    name: string;
+    link: string;
+    sublinks?: {
+        id: string;
+        name: string;
+        link: string;
+    }[];
+}[];
+
+export const sidebarData: SidebarDataTypes = [
     {
         id: 'reports-snapshot',
         name: 'Reports Snapshot',
@@ -64,28 +75,5 @@ export const sidebarData: any = [
                 link: 'retention'
             }
         ]
-    }
-];
-
-export const commonMenuLinks = [
-    {
-        id: 'traffic',
-        name: 'Traffic',
-        link: 'traffic'
-    },
-    {
-        id: 'coharts',
-        name: 'Coharts',
-        link: 'coharts'
-    },
-    {
-        id: 'events',
-        name: 'Events',
-        link: 'events'
-    },
-    {
-        id: 'promotions',
-        name: 'Promotions',
-        link: 'promotions'
     }
 ];

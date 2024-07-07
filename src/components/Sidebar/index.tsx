@@ -1,23 +1,23 @@
-import React, { forwardRef } from 'react';
+import React, { FC } from 'react';
 import './styles.scss';
-import MenuItem from './MenuItem';
-import SubMenuItem from './SubMenuItem';
-import { commonMenuLinks } from '@/data/sidebarData';
+import LevelOneItem from './MenuItem/LevelOneItem';
+import { SidebarDataTypes } from '@/data/sidebarData';
+import LevelTwoItem from './MenuItem/LevelTwoItem';
+import { handleTitle } from '@/store/slices/sidebarSlice';
 
-function Sidebar({ data, handleToggleMenu, menuRef, showSidebar }) {
-    const renderSubMenu = (submenuData) => {
+type SidebarProps = {
+    data: SidebarDataTypes;
+    showSidebar: boolean;
+    dispatch: FC;
+    handleTitle: () => void;
+};
+
+function Sidebar({ data, showSidebar, dispatch, handleTitle }: SidebarProps) {
+    const renderSubMenu = (sublinks: SidebarDataTypes) => {
         return (
             <div className="submenu-conatiner">
-                {submenuData.map((el, idx) => (
-                    <>
-                        <SubMenuItem data={el} key={idx} expandable={true} />
-
-                        <div className="deep-sub-menu-container">
-                            {commonMenuLinks.map((el, idx) => (
-                                <SubMenuItem data={el} key={idx} expandable={false} />
-                            ))}
-                        </div>
-                    </>
+                {sublinks.map(({ id, name }) => (
+                    <LevelTwoItem name={name} key={id} />
                 ))}
             </div>
         );
@@ -25,17 +25,18 @@ function Sidebar({ data, handleToggleMenu, menuRef, showSidebar }) {
 
     return (
         <div className={`sidebar ${showSidebar ? 'show' : 'hide'}`}>
-            {data.map((element) => (
-                <MenuItem
-                    data={element}
-                    key={element['id']}
-                    ref={menuRef}
-                    handleToggleMenu={handleToggleMenu}>
-                    {element?.['sublinks'] && renderSubMenu(element?.['sublinks'])}
-                </MenuItem>
+            {data.map(({ id, sublinks, name }) => (
+                <LevelOneItem
+                    sublinks={sublinks}
+                    name={name}
+                    key={id}
+                    dispatch={dispatch}
+                    handleTitle={handleTitle}>
+                    {sublinks && renderSubMenu(sublinks)}
+                </LevelOneItem>
             ))}
         </div>
     );
 }
 
-export default forwardRef(Sidebar);
+export default Sidebar;

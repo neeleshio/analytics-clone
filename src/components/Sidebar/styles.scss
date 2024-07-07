@@ -9,6 +9,10 @@
 
     .submenu-conatiner {
         display: none;
+
+        &.expand {
+            display: block;
+        }
     }
 
     &.hide {
@@ -17,11 +21,5 @@
 
     &.show {
         display: block;
-    }
-}
-
-.deep-sub-menu-container {
-    .submenuitem-container {
-        padding-left: 4rem;
     }
 }

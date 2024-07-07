@@ -1,21 +1,21 @@
+import React from 'react';
 import Sidebar from '@/components/Sidebar';
 import { sidebarData } from '@/data/sidebarData';
-import React, { useRef } from 'react';
+import { sidebarSelector } from '@/store/slices/sidebarSlice';
+import { useAppDispatch, useAppSelector } from '@/store/useStore';
+import { handleTitle } from '@/store/slices/sidebarSlice';
 
-function SidebarContainer({ showSidebar }) {
-    const menuRef = useRef(null);
-
-    const handleToggleMenu = () => {
-        console.log(menuRef);
-    };
+function SidebarContainer() {
+    const { open } = useAppSelector(sidebarSelector);
+    const dispatch = useAppDispatch();
 
     return (
         <aside className="sidebar-container">
             <Sidebar
                 data={sidebarData}
-                handleToggleMenu={handleToggleMenu}
-                ref={menuRef}
-                showSidebar={showSidebar}
+                showSidebar={open}
+                dispatch={dispatch}
+                handleTitle={handleTitle}
             />
         </aside>
     );

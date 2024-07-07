@@ -1,61 +1,68 @@
 .overview-wrapper {
     padding: 1rem 3rem;
+    height: 100%;
+    overflow: scroll;
+    padding-bottom: 20rem;
 }
 
 .charts-wrapper {
     display: flex;
+    flex-direction: column;
+}
+
+.overview-wrapper .header {
+    display: flex;
     align-items: center;
     justify-content: space-between;
 
-    .pie-chart {
-        width: 30%;
+    .title {
+        font-size: 1.8rem;
+        align-self: end;
+    }
+
+    .filter-btns {
         display: flex;
-        justify-content: flex-end;
+        justify-content: end;
     }
 }
 
 .line-chart-container {
-    border: 1px solid #d9dce0;
-    border-radius: 5px;
-    width: 706px;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+
+    .title {
+        font-size: 1.8rem;
+        display: flex;
+        justify-content: center;
+        text-decoration: underline;
+        margin: 2rem 0;
+    }
+}
+
+.line-chart-indivisual-container {
+    border-radius: 15px;
+    margin: 2rem 0 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+
+    .wrapper {
+        border: 1px solid #d7d6d6;
+    }
+
+    @media screen and (max-width: 678px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .stats-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+    margin-bottom: 4rem;
 
-.stats-container {
-    padding: 1rem 2rem;
-    border: 1px solid #d9dce0;
-    display: flex;
-    // width: 30rem;
-    border-radius: 6px;
-    align-items: center;
-
-    .circle {
-        width: 4rem;
-        height: 4rem;
-        border-radius: 50px;
-        border: 5px solid #5db3d9;
-    }
-
-    .stats {
-        color: #000000;
-        display: flex;
-        flex-direction: column;
-        margin-left: 1rem;
-
-        .name {
-            font-weight: 500;
-        }
-
-        .value {
-            color: #545353;
-            font-size: 1.3rem;
-            padding-left: 0.3rem;
-        }
+    @media screen and (max-width: 678px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -69,6 +76,5 @@
         background-color: #ffffff;
         color: #000000;
         border-radius: 5px;
-        // padding: 0.5rem 1rem;
     }
 }

@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './styles.scss';
-import { generateRandomData } from '@/utils/randomData';
-import { utilityBtns } from '@/data/headerData';
 import { RxAvatar } from 'react-icons/rx';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-function Header({ handleToggleSidebar }) {
+type HeaderProps = {
+    dispatch: FC;
+    toggleSidbar: () => {};
+};
+
+function Header({ dispatch, toggleSidbar }: HeaderProps) {
     return (
         <header className="header-container">
             <div className="logo-container">
-                <div className="hamburger-menu" onClick={handleToggleSidebar}>
+                <div className="hamburger-menu" onClick={() => dispatch(toggleSidbar())}>
                     <GiHamburgerMenu />
                 </div>
                 <span>Analytics Dashboard</span>

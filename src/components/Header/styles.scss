@@ -46,5 +46,13 @@
         border-radius: 6px;
         font-size: 1.6rem;
         color: #000000;
+
+        @media screen and (max-width: 778px) {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 555px) {
+        display: none;
     }
 }

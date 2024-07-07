@@ -16,6 +16,7 @@ type randomDataTypes = {
 function OverviewContainer() {
     const [data, setData] = useState<randomDataTypes>([]);
     const [statsData, setStatsData] = useState(stats);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const randomData = generateRandomChartData();
@@ -25,6 +26,7 @@ function OverviewContainer() {
     useEffect(() => {
         if (data.length > 0) {
             handleStatsData();
+            setLoading(false);
         }
     }, [data]);
 
@@ -48,15 +50,21 @@ function OverviewContainer() {
     };
 
     return (
-        <div className="overview-wrapper">
-            <div className="stats-wrapper">
-                {statsData.map((el) => (
-                    <StatsCard {...el} key={el.name} />
-                ))}
-            </div>
+        <>
+            {!loading ? (
+                <div className="overview-wrapper">
+                    <div className="stats-wrapper">
+                        {statsData.map((el) => (
+                            <StatsCard {...el} key={el.name} />
+                        ))}
+                    </div>
 
-            <ChartsContainer />
-        </div>
+                    <ChartsContainer />
+                </div>
+            ) : (
+                <div className="loading-container">Gathering your data.....</div>
+            )}
+        </>
     );
 }
 

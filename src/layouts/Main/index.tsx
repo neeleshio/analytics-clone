@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles.scss';
 import ToolbarContainer from '@/containers/Toolbar';
 import SidebarContainer from '@/containers/Sidebar';
@@ -12,7 +12,7 @@ function MainLayout() {
     const [screenWidth, setScreenWidth] = useState(0);
     const dispatch = useAppDispatch();
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (screenWidth === 0) setScreenWidth(window.screen.width);
 
         function updateSize() {
@@ -37,7 +37,10 @@ function MainLayout() {
             <HeaderContainer />
             <section className="sidebar-and-overview">
                 <SidebarContainer />
-                <main style={{ width: !open ? '100%' : `calc(100% - 256px)` }}>
+                <main
+                    style={{
+                        width: !open ? '100%' : screenWidth < 950 ? '100%' : `calc(100% - 256px)`
+                    }}>
                     <ToolbarContainer />
                     <OverviewContainer />
                 </main>

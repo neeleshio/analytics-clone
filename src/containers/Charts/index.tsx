@@ -6,6 +6,9 @@ import LineChartIndivisual from './LineChartIndivisual';
 import BarChartContainer from './BarChart';
 import PieChartContainer from './PieChart';
 import './styles.scss';
+import LineChartContainer2 from './LineChart2';
+import { useDispatch } from 'react-redux';
+import { fetchChartData } from '@/store/slices/dataSlice';
 
 type randomDataTypes = {
     createdMonth: string;
@@ -19,10 +22,12 @@ type randomDataTypes = {
 function ChartsContainer({}) {
     const [data, setData] = useState<randomDataTypes>([]);
     const [activeFilter, setActiveFilter] = useState('2024');
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const randomData = generateRandomChartData();
         setData([...randomData]);
+        dispatch(fetchChartData());
     }, []);
 
     // filtering data by year
@@ -59,6 +64,10 @@ function ChartsContainer({}) {
             </div>
             <div className="bar-chart-container">
                 <PieChartContainer data={data} />
+            </div>
+
+            <div className="line-chart-container-2">
+                <LineChartContainer2 />
             </div>
         </div>
     );

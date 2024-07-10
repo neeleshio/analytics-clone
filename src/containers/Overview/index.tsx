@@ -3,6 +3,9 @@ import './styles.scss';
 import { dataTypes, generateRandomChartData, stats } from '@/data/chartData';
 import StatsCard from '@/components/StatsCard';
 import ChartsContainer from '../Charts';
+import Table from '../Table';
+import { useAppSelector } from '@/store/useStore';
+import { dataSelector } from '@/store/slices/dataSlice';
 
 type randomDataTypes = {
     createdMonth: string;
@@ -17,6 +20,7 @@ function OverviewContainer() {
     const [data, setData] = useState<randomDataTypes>([]);
     const [statsData, setStatsData] = useState(stats);
     const [loading, setLoading] = useState(true);
+    const { isLoading } = useAppSelector(dataSelector);
 
     useEffect(() => {
         const randomData = generateRandomChartData();
@@ -60,6 +64,10 @@ function OverviewContainer() {
                     </div>
 
                     <ChartsContainer />
+
+                    <div className="table-container">
+                        {!isLoading ? <Table /> : <div>Loading.....</div>}
+                    </div>
                 </div>
             ) : (
                 <div className="loading-container">Gathering your data.....</div>
